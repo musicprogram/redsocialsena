@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RedSocialSena</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+	<nav class="navbar navbar-default" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+
+
+
+			</button>
+			<%if current_user %>
+
+			<a class="navbar-brand" href="#"> <%= image_tag(@auth['info']['image'], class:'img-circle' )%></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav">
+
+				
+
+				<li class="active"><a href="#"><%= link_to "salir", 'sign_out', method: :delete %></a></li>
+				<%else%>
+
+
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+
+				<li class="active"><a href="#"><%= link_to  "<i class='fa fa-facebook fa-2x'></i>".html_safe , '/auth/facebook' %></a></li>
+				<li class="active"><a href="#"><%= link_to "<i class='fa fa-twitter fa-2x'></i>".html_safe , '/auth/twitter' %></a></li>
+
+
+				<%end%>
+
+
+
+
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+
+
+
+
+
+
+	<%= yield %>
+
+
+
+
+</body>
+</html>
