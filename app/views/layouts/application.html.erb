@@ -26,46 +26,7 @@
 <body>
 
 
-	<nav class="navbar navbar-default" role="navigation">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-
-
-
-			</button>
-			<%if current_user %>
-
-			<a class="navbar-brand" href="#"> <%= image_tag(@auth['info']['image'], class:'img-circle' )%></a>
-		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse navbar-ex1-collapse">
-			<ul class="nav navbar-nav">
-
-				
-
-				<li class="active"><a href="#"><%= link_to "salir", 'sign_out', method: :delete %></a></li>
-				<%else%>
-
-
-			</ul>
-
-			<ul class="nav navbar-nav navbar-right">
-
-				<li class="active"><a href="#"><%= link_to  "<i class='fa fa-facebook fa-2x'></i>".html_safe , '/auth/facebook' %></a></li>
-				<li class="active"><a href="#"><%= link_to "<i class='fa fa-twitter fa-2x'></i>".html_safe , '/auth/twitter' %></a></li>
-
-
-				<%end%>
-
-
-
-
-			</ul>
-		</div><!-- /.navbar-collapse -->
-	</nav>
-
+	
 
 
 
@@ -79,3 +40,24 @@
 
 </body>
 </html>
+
+
+
+<%if current_user %>
+
+			<a class="navbar-brand" href="#"> <%= image_tag(@auth['info']['image'], class:'img-circle' )%></a>
+
+
+			<li class="active"><a href="#"><%= link_to "salir", 'sign_out', method: :delete %></a></li>
+				<%else%>
+
+
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+
+				<li class="active"><a href="#"><%= link_to  "<i class='fa fa-facebook fa-2x'></i>".html_safe , '/auth/facebook' %></a></li>
+				<li class="active"><a href="#"><%= link_to "<i class='fa fa-twitter fa-2x'></i>".html_safe , '/auth/twitter' %></a></li>
+
+
+					<%end%>
